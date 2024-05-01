@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog login </title>
+        <style>
+            h3{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>LOGIN</h1>
+        {%for message in messages%}
+            <h3>{{message}}</h3>
+        {%endfor%} 
+        <div class="sign-in-container">
+            <div class="form">
+                <form method="POST" action="login.html">
+                    {%csrf_token%}
+                    <p>Username</p>
+                    <input type="text" name="username" class="input" placeholder="Username">
+                    <p>Password</p>
+                    <input type="password" name="password" class="input" placeholder="Password">
+                    <p>Retype Password</p>
+                    <input type="password" name="password2" class="input" placeholder="Password">
+                    <p>
+                        <button class="submit-button">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

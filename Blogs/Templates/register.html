@@ -1,0 +1,36 @@
+<h1>Sign in Below</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog Sign Up</title>
+        <style>
+            h5{
+                color: red;
+            }
+        </style>    
+    </head>
+    <body>
+        {% for message in messages %}
+            <h5>{{message}}</h5>
+        {% endfor %}
+        <div class="sign-in-container">
+            <div class="form">
+                <form method="POST" action='register.html'>
+                    {%csrf_token%}
+                    <p>Username</p>
+                    <input type="text" name="username" class="input" placeholder="Username">
+                    <p>Password</p>
+                    <input type="password" name="password" class="input" placeholder="Password">
+                    <p>Retype Password</p>
+                    <input type="password" name="password2" class="input" placeholder="Password">
+                    <p>
+                        <button class="submit-button">Submit</button>
+                    </p>
+                    <p>
+                        <a href="login.html">Already Have an account? Login here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
