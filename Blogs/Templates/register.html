@@ -1,21 +1,21 @@
-<h1>Sign in Below</h1>
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Blog Sign Up</title>
-        <style>
-            h5{
-                color: red;
-            }
-        </style>    
+        <link rel="stylesheet" href="{% static 'static/register/register.css' %}"> 
+        <link rel="stylesheet" href="{% static '/register/header.css' %}" >
+        <link rel="stylesheet" href="{% static '/register/footer.css' %}" >
     </head>
     <body>
+        <header">READERS HUB</header>
+        <h1>Sign in Below</h1>
         {% for message in messages %}
             <h5>{{message}}</h5>
         {% endfor %}
         <div class="sign-in-container">
             <div class="form">
-                <form method="POST" action='register.html'>
+                <form method="POST" action=''>
                     {%csrf_token%}
                     <p>Username</p>
                     <input type="text" name="username" class="input" placeholder="Username">
@@ -25,8 +25,8 @@
                     <input type="password" name="password2" class="input" placeholder="Password">
                     <p>
                         <button class="submit-button">Submit</button>
-                    </p>
-                    <p>
+                   > </p>
+                    <p
                         <a href="login.html">Already Have an account? Login here</a>
                     </p>
                 </form>
